@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <default sync-j="4" revision="master"/>
+
+  <remote fetch="https://git.yoctoproject.org/git" name="yocto"/>
+  <remote fetch="https://github.com/Freescale" name="freescale"/>
+  <remote fetch="https://github.com/openembedded" name="oe"/>
+  <remote fetch="https://github.com/mirzak" name="mirzak"/>
+  <remote fetch="https://github.com/kraj" name="kraj"/>
+
+  <project remote="yocto" revision="master" name="poky" path="sources/poky"/>
+  <project remote="yocto" revision="master" name="meta-freescale" path="sources/meta-freescale"/>
+  <project remote="oe" revision="master" name="meta-openembedded" path="sources/meta-openembedded"/>
+
+  <project remote="freescale" revision="master" name="fsl-community-bsp-base" path="sources/base">
+    <linkfile dest="setup-environment" src="setup-environment"/>
+  </project>
+
+  <project remote="freescale" revision="master" name="meta-freescale-3rdparty" path="sources/meta-freescale-3rdparty"/>
+  <project remote="freescale" revision="master" name="meta-freescale-distro" path="sources/meta-freescale-distro"/>
+
+  <project remote="kraj" revision="master" name="meta-clang" path="sources/meta-clang"/>
+  <project remote="mirzak" revision="master" name="meta-coral" path="sources/meta-coral">
+    <linkfile dest="README" src="README"/>
+    <linkfile src="meta-coral/scripts/setup-coral.sh" dest="setup-coral.sh"/>
+  </project>
+
+</manifest>
